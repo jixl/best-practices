@@ -10,7 +10,7 @@
 
 ## Commit message 示例
   
-![MacDown Screenshot](/Users/jixl/Desktop/a-b.png)
+![MacDown Screenshot](./media/a-b-c.png)
 上图是著名的前端项目Angular的commit message截图
 
 ## AngularJs规范(AngularJS Git Commit Message Conventions)
