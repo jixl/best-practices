@@ -1,5 +1,5 @@
 # Git 使用规范
-    
+
 ## 安装
 - Git安装
     - windows

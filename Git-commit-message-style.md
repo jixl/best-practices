@@ -9,19 +9,23 @@
 	3. 必要时还能方便的生成Change log
 
 ## Commit message 示例
-  
-![MacDown Screenshot](./media/a-b-c.png)
+
+![](./media/a-b-c.png)
 上图是著名的前端项目Angular的commit message截图
 
 ## AngularJs规范(AngularJS Git Commit Message Conventions)
 
 ```
 每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。
-<type>(<scope>): <subject>// 空一行<body>// 空一行<footer>
-	
+<type>(<scope>): <subject>
+// 空一行
+<body>
+// 空一行
+<footer>
+
 其中，Header 是必需的，Body 和 Footer 可以省略。
 不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观。
-	
+
 • Message Header格式： <type>(<scope>): <subject>
     Header 部分只有一行，分三个字段：type（必需）、scope（可选）和subject（必需）
   ○ type : 必填 用于说明commit的类型。总共7个标识：
@@ -43,7 +47,7 @@
 	  若此次commit是解决某个issue应该在行末尾注明并加链接，如：...(#101)
 • Message Body 部分是对本次 commit 的详细描述，可以分成多行
     ○ 示例
-	   More detailed explanatory text, if necessary.  Wrap it to about 72 characters or so. 
+	   More detailed explanatory text, if necessary.  Wrap it to about 72 characters or so.
 	   Further paragraphs come after blank lines.
 	   - Bullet points are okay, too
 	   - Use a hanging indent
@@ -53,23 +57,28 @@
 • Message Footer 该部分只用于两种情况
 	○ 不兼容变动
 		如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法。
-		BREAKING CHANGE: isolate scope bindings definition has changed.
+
+BREAKING CHANGE: isolate scope bindings definition has changed.
 		To migrate the code follow the example below:
 		Before:
-		scope: {      myAttr: 'attribute',    }
+		scope: {
+      myAttr: 'attribute',
+    }
 		After:
-		scope: {      myAttr: '@',    }
+		scope: {
+      myAttr: '@',
+    }
 		The removed `inject` was not generaly useful for directives so there should be no code using it.
-		
+
 	○ 关闭 issue
 		如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue。Closes #234
-		也可以一次关闭多个 issue。Closes #123, #245, #992 	
+		也可以一次关闭多个 issue。Closes #123, #245, #992
 • revert
 	还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以revert:开头，后面跟着被撤销 Commit 的 Header。
 	revert: feat(pencil): add 'graphiteWidth' option
 	This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 
 	Body部分的格式是固定的，必须写成This reverts commit hash>.，其中的hash是被撤销 commit 的 SHA 标识符。
-	
+
 如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的Reverts小标题下面。
 ```

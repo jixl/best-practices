@@ -244,7 +244,7 @@ user-service.coffee
 
 ```coffeescript
 class UserDomain
-class UserService extends BaseService 
+class UserService extends BaseService
 ```
 
 对于常量，单词全部大写，用下划线隔开即可：
