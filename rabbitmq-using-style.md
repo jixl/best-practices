@@ -31,8 +31,8 @@ Binding Key中可以存在两种特殊字符"*"与"#"，用于做模糊匹配，
 - 异常消息数据交换器 error_message_topic_exchange
 
 ### RoutingKey定义规则
-- 历史数据：history.ServiceXXX.entity.XXXX业务类型
-- 实时数据：realtime.ServiceXXX.entity.XXXX业务类型
+- 领域服务.具体业务.操作OP `create, update, delete, history`
+- 示例 创建销售合同 `sales.contract.create`
 
 ### 消息队列Queue
 在向一个队列推送消息时，一般会在rabbit_amqqueue_process(队列进程)中产生性能瓶颈，Connection和Channel都会处于flow状态（blocked和unblocked之间来回切换），而队列处于running状态，此时队列处产生性能瓶颈
@@ -64,12 +64,12 @@ Binding Key中可以存在两种特殊字符"*"与"#"，用于做模糊匹配，
 ### 消息订阅bindingKey规则 `*.服务.entity.*`
 
 ```
-示例1: 模糊匹配xxx服务
-binding Key: *.XXX.entity.*
+示例1: 模糊匹配xxx操作类型
+binding Key: *.*.XXX
 
-示例2: 模糊匹配xxx服务zzz业务
-binding Key: *.XXX.entity.zzz
+示例2: 模糊匹配xxx领域对象zzz业务
+binding Key: XXX.zzz.*
 
-示例3: 完全匹配xxxx服务zzzz业务的实时消息
-binding Key: realtime.XXX.entity.zzzz
+示例3: 完全匹配xxx领域对象zzz业务mmm操作
+binding Key: XXX.zzzz.mmm
 ```
