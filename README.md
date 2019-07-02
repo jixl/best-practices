@@ -1,4 +1,5 @@
 ## 系统整体设计
+- [多服务架构规范](./multi-serv.md)
 
 ## CNBM 开发规范
 - [RabbitMQ消息协议规范](./rabbitmq-using-style.md)
